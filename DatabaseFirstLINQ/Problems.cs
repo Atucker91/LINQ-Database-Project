@@ -24,7 +24,7 @@ namespace DatabaseFirstLINQ
             //ProblemSeven();
             //ProblemEight();
             //ProblemNine();
-            //ProblemTen();
+            ProblemTen();
             //ProblemEleven();
             //ProblemTwelve();
             //ProblemThirteen();
@@ -42,7 +42,16 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that returns the number of users in the Users table.
             // HINT: .ToList().Count
+            var users = _context.Users;
+            int numberOfUsers = 0;
 
+            foreach (User user in users)
+            {
+                
+                numberOfUsers++;
+            }
+            Console.WriteLine(numberOfUsers);
+            Console.ReadLine();
         }
 
         private void ProblemTwo()
@@ -54,7 +63,7 @@ namespace DatabaseFirstLINQ
             {
                 Console.WriteLine(user.Email);
             }
-
+            Console.ReadLine();
         }
 
         private void ProblemThree()
@@ -62,6 +71,16 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that gets each product where the products price is greater than $150.
             // Then print the name and price of each product from the above query to the console.
 
+            var products = _context.Products;
+            
+
+            var productsUnder150 = products.Where(p =>  p.Price > 150);
+
+            foreach (var product in productsUnder150)
+            {
+                Console.WriteLine(product.Name + " " + "Price:" + product.Price);
+            }
+            Console.ReadLine();
         }
 
         private void ProblemFour()
@@ -69,12 +88,34 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that gets each product that contains an "s" in the products name.
             // Then print the name of each product from the above query to the console.
 
+            var products = _context.Products;
+
+
+            var productsWithS = products.Where(p => p.Name.Contains("s"));
+
+            foreach (var product in productsWithS)
+            {
+                Console.WriteLine(product.Name);
+            }
+            Console.ReadLine();
         }
 
         private void ProblemFive()
         {
             // Write a LINQ query that gets all of the users who registered BEFORE 2016
             // Then print each user's email and registration date to the console.
+
+            var users = _context.Users;
+
+            DateTime yearToCheck = new DateTime(2016, 01, 01);
+
+            var before2016 = users.Where(p => p.RegistrationDate < yearToCheck); ;
+
+            foreach (User user in before2016)
+            {
+                Console.WriteLine(user.Email + "" + user.RegistrationDate);
+            }
+            Console.ReadLine();
 
         }
 
@@ -83,6 +124,18 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that gets all of the users who registered AFTER 2016 and BEFORE 2018
             // Then print each user's email and registration date to the console.
 
+            var users = _context.Users;
+
+            DateTime start = new DateTime(2016, 01, 01);
+            DateTime end = new DateTime(2018, 01, 01);
+
+            var before2016 = users.Where(p => p.RegistrationDate > start && p.RegistrationDate < end); 
+
+            foreach (User user in before2016)
+            {
+                Console.WriteLine(user.Email + "" + user.RegistrationDate);
+            }
+            Console.ReadLine();
         }
 
         // <><><><><><><><> R Actions (Read) with Foreign Keys <><><><><><><><><>
@@ -96,12 +149,20 @@ namespace DatabaseFirstLINQ
             {
                 Console.WriteLine($"Email: {userRole.User.Email} Role: {userRole.Role.RoleName}");
             }
+            Console.ReadLine();
         }
 
         private void ProblemEight()
         {
             // Write a LINQ query that retreives all of the products in the shopping cart of the user who has the email "afton@gmail.com".
             // Then print the product's name, price, and quantity to the console.
+
+            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == "afton@gmail.com");
+            foreach (ShoppingCart product in productsinCart)
+            {
+                Console.WriteLine(product.Product.Name + " " + product.Product.Price + " " + product.Quantity);
+            }
+            Console.ReadLine();
 
         }
 
@@ -111,6 +172,13 @@ namespace DatabaseFirstLINQ
             // HINT: End of query will be: .Select(sc => sc.Product.Price).Sum();
             // Then print the total of the shopping cart to the console.
 
+            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == "oda@gmail.com").Select(sc => sc.Product.Price).Sum();
+
+
+            Console.WriteLine(productsinCart);
+
+            
+            Console.ReadLine();
         }
 
         private void ProblemTen()
@@ -118,6 +186,19 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that retreives all of the products in the shopping cart of users who have the role of "Employee".
             // Then print the user's email as well as the product's name, price, and quantity to the console.
 
+            //var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == "oda@gmail.com");
+
+            var roleEmp = _context.UserRoles.Include(re => re.Role).Include(re => re.User).Where(re => re.Role.RoleName == "Employee").Select(ur => ur.UserId).ToList();
+            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => roleEmp.Contains(sc.UserId)).ToList();   
+
+
+            foreach (ShoppingCart product in productsinCart)
+            {
+                Console.WriteLine(product.User.Email + " " + product.Product.Name + " " + product.Product.Price + " " + product.Quantity);
+            }
+            Console.ReadLine();
+            
+            
         }
 
         // <><><><><><><><> CUD (Create, Update, Delete) Actions <><><><><><><><><>

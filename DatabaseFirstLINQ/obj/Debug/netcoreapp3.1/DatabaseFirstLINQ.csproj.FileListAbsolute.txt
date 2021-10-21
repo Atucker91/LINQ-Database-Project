@@ -59,7 +59,6 @@
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.AssemblyInfoInputs.cache
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.AssemblyInfo.cs
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.csproj.CoreCompileInputs.cache
-\\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.csproj.CopyComplete
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.dll
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.pdb
 \\Mac\Home\Desktop\LINQ-Database-Project\DatabaseFirstLINQ\obj\Debug\netcoreapp3.1\DatabaseFirstLINQ.genruntimeconfig.cache

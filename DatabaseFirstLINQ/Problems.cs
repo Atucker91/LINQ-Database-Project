@@ -35,7 +35,8 @@ namespace DatabaseFirstLINQ
             //ProblemEighteen();
             //ProblemNineteen();
             //ProblemTwenty();
-            BonusOne();
+            //BonusOne();
+            BonusTwo();
         }
 
         // <><><><><><><><> R Actions (Read) <><><><><><><><><>
@@ -366,7 +367,36 @@ namespace DatabaseFirstLINQ
         private void BonusTwo()
         {
             // Write a query that finds the total of every users shopping cart products using LINQ.
-            // Display the total of each users shopping cart as well as the total of the toals to the console.
+            // Display the total of each users shopping cart as well as the total of the totals to the console.
+            var userIds = _context.Users.Select(u => u.Id).ToList();
+            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User);
+            decimal totalAllCarts = 0;
+            decimal totalUserCart = 0;
+            string userEmail = "";
+            
+
+            foreach (int id in userIds)
+            {
+                foreach (ShoppingCart userCart in productsinCart)
+                {
+                    if(id == userCart.UserId)
+                    {
+                        totalUserCart += userCart.Product.Price;
+                        totalAllCarts += userCart.Product.Price;
+                        userEmail = userCart.User.Email;
+                    }
+                    else
+                    {
+                        //Console.WriteLine("Did not enter if");
+                    }
+                }
+                Console.WriteLine("totalUserCart Inside" + userEmail +  "Shopping Cart" + totalUserCart);
+                totalUserCart = 0;
+                userEmail = "";
+
+            }
+            Console.WriteLine("totalAllCarts outside foreach :" + totalAllCarts);
+            Console.ReadLine();
         }
 
         // BIG ONE
@@ -384,6 +414,10 @@ namespace DatabaseFirstLINQ
             // b. Re-prompt the user for credentials
 
         }
+
+
+
+        
 
     }
 }

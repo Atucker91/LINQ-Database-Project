@@ -47,7 +47,7 @@ namespace DatabaseFirstLINQ
 
             foreach (User user in users)
             {
-                
+
                 numberOfUsers++;
             }
             Console.WriteLine(numberOfUsers);
@@ -72,9 +72,9 @@ namespace DatabaseFirstLINQ
             // Then print the name and price of each product from the above query to the console.
 
             var products = _context.Products;
-            
 
-            var productsUnder150 = products.Where(p =>  p.Price > 150);
+
+            var productsUnder150 = products.Where(p => p.Price > 150);
 
             foreach (var product in productsUnder150)
             {
@@ -116,7 +116,6 @@ namespace DatabaseFirstLINQ
                 Console.WriteLine(user.Email + "" + user.RegistrationDate);
             }
             Console.ReadLine();
-
         }
 
         private void ProblemSix()
@@ -129,7 +128,7 @@ namespace DatabaseFirstLINQ
             DateTime start = new DateTime(2016, 01, 01);
             DateTime end = new DateTime(2018, 01, 01);
 
-            var before2016 = users.Where(p => p.RegistrationDate > start && p.RegistrationDate < end); 
+            var before2016 = users.Where(p => p.RegistrationDate > start && p.RegistrationDate < end);
 
             foreach (User user in before2016)
             {
@@ -163,7 +162,6 @@ namespace DatabaseFirstLINQ
                 Console.WriteLine(product.Product.Name + " " + product.Product.Price + " " + product.Quantity);
             }
             Console.ReadLine();
-
         }
 
         private void ProblemNine()
@@ -177,7 +175,7 @@ namespace DatabaseFirstLINQ
 
             Console.WriteLine(productsinCart);
 
-            
+
             Console.ReadLine();
         }
 
@@ -186,10 +184,8 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that retreives all of the products in the shopping cart of users who have the role of "Employee".
             // Then print the user's email as well as the product's name, price, and quantity to the console.
 
-            //var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == "oda@gmail.com");
-
             var roleEmp = _context.UserRoles.Include(re => re.Role).Include(re => re.User).Where(re => re.Role.RoleName == "Employee").Select(ur => ur.UserId).ToList();
-            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => roleEmp.Contains(sc.UserId)).ToList();   
+            var productsinCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => roleEmp.Contains(sc.UserId)).ToList();
 
 
             foreach (ShoppingCart product in productsinCart)
@@ -197,8 +193,6 @@ namespace DatabaseFirstLINQ
                 Console.WriteLine(product.User.Email + " " + product.Product.Name + " " + product.Product.Price + " " + product.Quantity);
             }
             Console.ReadLine();
-            
-            
         }
 
         // <><><><><><><><> CUD (Create, Update, Delete) Actions <><><><><><><><><>

@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\justi\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\justi\\.nuget\\packages"
-    ]
-  }
-=======
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
@@ -14,5 +5,4 @@
       "C:\\Users\\alextucker\\.nuget\\packages"
     ]
   }
->>>>>>> a86ba17aba9026300ffc6a2d69aeaa1bc6573def
 }

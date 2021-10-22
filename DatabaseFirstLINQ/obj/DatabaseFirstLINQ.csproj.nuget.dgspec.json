@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {
+    "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
         "projectName": "DatabaseFirstLINQ",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
         "packagesPath": "C:\\Users\\alextucker\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\LINQ-Database-Project\\DatabaseFirstLINQ\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alextucker\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,11 +42,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

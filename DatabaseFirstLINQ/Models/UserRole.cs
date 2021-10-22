@@ -14,4 +14,3 @@ namespace DatabaseFirstLINQ.Models
         public virtual User User { get; set; }
     }
 }
-

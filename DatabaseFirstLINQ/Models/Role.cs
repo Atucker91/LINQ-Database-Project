@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -18,4 +18,3 @@ namespace DatabaseFirstLINQ.Models
         public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }
-

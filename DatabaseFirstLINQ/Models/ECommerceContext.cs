@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -119,6 +119,3 @@ namespace DatabaseFirstLINQ.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
-
-
-

@@ -385,17 +385,12 @@ namespace DatabaseFirstLINQ
                         totalAllCarts += userCart.Product.Price;
                         userEmail = userCart.User.Email;
                     }
-                    else
-                    {
-                        //Console.WriteLine("Did not enter if");
-                    }
                 }
-                Console.WriteLine("totalUserCart Inside" + userEmail +  "Shopping Cart" + totalUserCart);
+                Console.WriteLine("Customer with email:  " + userEmail +  " has a total balance of: " + totalUserCart);
                 totalUserCart = 0;
                 userEmail = "";
-
             }
-            Console.WriteLine("totalAllCarts outside foreach :" + totalAllCarts);
+            Console.WriteLine("The total shopping cart balance is : " + totalAllCarts);
             Console.ReadLine();
         }
 

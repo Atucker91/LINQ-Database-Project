@@ -429,6 +429,26 @@ namespace DatabaseFirstLINQ
                                   "Select [3] to  ADD Products \r\n" +
                                   "Select [4] to REMOVE a Product");
                 selection = Console.ReadLine();
+
+                switch (selection)
+                {
+                    case "1": 
+                         var custShopCart = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == userEmail);
+                         foreach(ShoppingCart item in custShopCart)
+                         {
+                            Console.WriteLine(item.Product.Name + " " + item.Product.Price);
+                         }
+                         Console.ReadLine();
+                        break;
+                    case "2": 
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    default:
+                        break;
+                }
             }
 
             else

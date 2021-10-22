@@ -36,7 +36,8 @@ namespace DatabaseFirstLINQ
             //ProblemNineteen();
             //ProblemTwenty();
             //BonusOne();
-            BonusTwo();
+            //BonusTwo();
+            BonusThree();
         }
 
         // <><><><><><><><> R Actions (Read) <><><><><><><><><>
@@ -408,7 +409,33 @@ namespace DatabaseFirstLINQ
             // a. Display "Invalid Email or Password"
             // b. Re-prompt the user for credentials
 
+            var userEmail = "";
+            var userPassword = "";
+
+            Console.WriteLine("Please enter your email. ");
+            userEmail = Console.ReadLine();
+            Console.WriteLine("Please enter your password. ");
+            userPassword = Console.ReadLine();
+
+            var emailToCheck = _context.Users.Where(u => u.Email == userEmail && u.Password == userPassword).SingleOrDefault();
+
+            if (emailToCheck != null)
+            {
+                Console.WriteLine("Signed In!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Email or Password.");
+            }
+
+            Console.ReadLine();
         }
+
+
+
+
+
+    }
 
 
 

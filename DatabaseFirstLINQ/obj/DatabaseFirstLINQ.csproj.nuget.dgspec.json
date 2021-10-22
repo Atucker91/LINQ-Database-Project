@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {}
+    "C:\\Users\\justi\\source\\repos\\MyLINQProject\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {
+    "C:\\Users\\justi\\source\\repos\\MyLINQProject\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
+        "projectUniqueName": "C:\\Users\\justi\\source\\repos\\MyLINQProject\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
         "projectName": "DatabaseFirstLINQ",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
-        "packagesPath": "C:\\Users\\alextucker\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\DatabaseFirstLINQ\\DatabaseFirstLINQ\\obj\\",
+        "projectPath": "C:\\Users\\justi\\source\\repos\\MyLINQProject\\LINQ-Database-Project\\DatabaseFirstLINQ\\DatabaseFirstLINQ.csproj",
+        "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\justi\\source\\repos\\MyLINQProject\\LINQ-Database-Project\\DatabaseFirstLINQ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alextucker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

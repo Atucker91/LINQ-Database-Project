@@ -411,6 +411,7 @@ namespace DatabaseFirstLINQ
 
             var userEmail = "";
             var userPassword = "";
+            string selection = "";
 
             Console.WriteLine("Please enter your email. ");
             userEmail = Console.ReadLine();
@@ -422,7 +423,14 @@ namespace DatabaseFirstLINQ
             if (emailToCheck != null)
             {
                 Console.WriteLine("Signed In!");
+
+                Console.WriteLine("Select [1] to View Shopping Cart \r\n" +
+                                  "Select [2] to View ALL Products \r\n" +
+                                  "Select [3] to  ADD Products \r\n" +
+                                  "Select [4] to REMOVE a Product");
+                selection = Console.ReadLine();
             }
+
             else
             {
                 Console.WriteLine("Invalid Email or Password.");
@@ -431,15 +439,6 @@ namespace DatabaseFirstLINQ
             Console.ReadLine();
         }
 
-
-
-
-
     }
-
-
-
-        
-
-    }
+   
 }

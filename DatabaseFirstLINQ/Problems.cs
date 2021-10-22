@@ -25,7 +25,7 @@ namespace DatabaseFirstLINQ
             //ProblemEight();
             //ProblemNine();
             //ProblemTen();
-            ProblemEleven();
+            //ProblemEleven();
             //ProblemTwelve();
             //ProblemThirteen();
             //ProblemFourteen();
@@ -35,6 +35,7 @@ namespace DatabaseFirstLINQ
             //ProblemEighteen();
             //ProblemNineteen();
             //ProblemTwenty();
+            BonusOne();
         }
 
         // <><><><><><><><> R Actions (Read) <><><><><><><><><>
@@ -214,15 +215,16 @@ namespace DatabaseFirstLINQ
         private void ProblemTwelve()
         {
             // Create a new Product object and add that product to the Products table using LINQ.
-
             Product newProduct = new Product()
             {
-                Name = "Guitar",
-                Description = "Black Fender Jaguar",
-                Price = 750
+                Name = "Chevrolet Corvet",
+                Description = "Fast Car",
+                Price = 50000
             };
             _context.Products.Add(newProduct);
             _context.SaveChanges();
+
+           
         }
 
         private void ProblemThirteen()
@@ -242,6 +244,20 @@ namespace DatabaseFirstLINQ
         private void ProblemFourteen()
         {
             // Add the product you create to the user we created in the ShoppingCart junction table using LINQ.
+            var productId = _context.Products.Where(p => p.Name == "Chevrolet Corvet").Select(p => p.Id).SingleOrDefault();
+            var userId = _context.Users.Where(u => u.Email == "david@gmail.com").Select(u => u.Id).SingleOrDefault();
+            ShoppingCart newShoppingCart = new ShoppingCart()
+            {
+                ProductId = productId,
+                UserId = userId
+            };
+
+            _context.ShoppingCarts.Add(newShoppingCart);
+            _context.SaveChanges();
+
+
+
+
 
             var userId = _context.Users.Where(u => u.Email == "david@gmail.com").Select(u => u.Id).SingleOrDefault();
             var productId = _context.Products.Where(p => p.Name == "Guitar").Select(p => p.Id).SingleOrDefault();
@@ -269,10 +285,12 @@ namespace DatabaseFirstLINQ
         private void ProblemSixteen()
         {
             // Update the price of the product you created to something different using LINQ.
-            var product = _context.Products.Where(p => p.Name == "Guitar").SingleOrDefault();
-            product.Price = 800;
-            _context.Products.Update(product);
+            var prod = _context.Products.Where(p => p.Price == 50000).SingleOrDefault();
+            prod.Price = 25000;
+            _context.Products.Update(prod);
             _context.SaveChanges();
+
+
         }
 
         private void ProblemSeventeen()
@@ -300,6 +318,7 @@ namespace DatabaseFirstLINQ
             _context.UserRoles.Remove(userRole);
             _context.SaveChanges();
 
+
         }
 
         private void ProblemNineteen()
@@ -317,9 +336,11 @@ namespace DatabaseFirstLINQ
         private void ProblemTwenty()
         {
             // Delete the user with the email "oda@gmail.com" from the Users table using LINQ.
-            var user = _context.Users.Where(u => u.Email == "oda@gmail.com").SingleOrDefault();
-            _context.Users.Remove(user);
+            var userToDelete = _context.Users.Where(u => u.Email == "oda@gmail.com").SingleOrDefault();
+            _context.Users.Remove(userToDelete);
             _context.SaveChanges();
+
+
         }
 
         // <><><><><><><><> BONUS PROBLEMS <><><><><><><><><>
@@ -329,6 +350,27 @@ namespace DatabaseFirstLINQ
             // Prompt the user to enter in an email and password through the console.
             // Take the email and password and check if the there is a person that matches that combination.
             // Print "Signed In!" to the console if they exists and the values match otherwise print "Invalid Email or Password.".
+
+            var userEmail = "";
+            var userPassword = "";
+
+            Console.WriteLine("Please enter your email. ");
+            userEmail = Console.ReadLine();
+            Console.WriteLine("Please enter your password. ");
+            userPassword = Console.ReadLine();
+
+            var emailToCheck = _context.Users.Where(u => u.Email == userEmail && u.Password == userPassword).SingleOrDefault();
+
+            if (emailToCheck != null)
+            {
+                Console.WriteLine("Signed In!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Email or Password.");
+            }
+            
+            Console.ReadLine();
         }
 
         private void BonusTwo()

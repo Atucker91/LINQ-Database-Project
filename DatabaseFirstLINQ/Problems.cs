@@ -460,55 +460,101 @@ namespace DatabaseFirstLINQ
                         {
                             case "1":
                                 var productToAdd = _context.Products.Where(p => p.Name == "Gazelle 22272 T4 Pop - Up").Select(p => p.Id).SingleOrDefault();
-                                ShoppingCart newShoppingCarte = new ShoppingCart()
+                                var LoggedInUserId = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd = new ShoppingCart()
                                 {
-                                    UserId = ,
+                                    UserId = LoggedInUserId,
                                     ProductId = productToAdd
                                 };
-                                _context.UserRoles.Add(newUserRole);
+                                _context.ShoppingCarts.Add(newShoppingCartAdd);
                                 _context.SaveChanges();
                                 break;
                             case "2":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Freedom from the Known - Jiddu Krishnamurti").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd2 = _context.Products.Where(p => p.Name == "Freedom from the Known - Jiddu Krishnamurti").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId2 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd2 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId2,
+                                    ProductId = productToAdd2
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd2);
+                                _context.SaveChanges();
                                 break;
                             case "3":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Ball Mason Jar-32 oz.").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd3 = _context.Products.Where(p => p.Name == "Ball Mason Jar-32 oz.").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId3 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd3 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId3,
+                                    ProductId = productToAdd3
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd3);
+                                _context.SaveChanges();
                                 break;
                             case "4":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Stellar Basic Flute Key of G - Native American Style Flute").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd4 = _context.Products.Where(p => p.Name == "Stellar Basic Flute Key of G - Native American Style Flute").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId4 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd4 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId4,
+                                    ProductId = productToAdd4
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd4);
+                                _context.SaveChanges();
                                 break;
                             case "5":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Catan The Board Game").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd5 = _context.Products.Where(p => p.Name == "Catan The Board Game").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId5 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd5 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId5,
+                                    ProductId = productToAdd5
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd5);
+                                _context.SaveChanges();
                                 break;
                             case "6":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Apple Watch Series 3").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd6 = _context.Products.Where(p => p.Name == "Apple Watch Series 3").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId6 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd6 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId6,
+                                    ProductId = productToAdd6
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd6);
+                                _context.SaveChanges();
                                 break;
                             case "7":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Nintendo Switch").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd7 = _context.Products.Where(p => p.Name == "Nintendo Switch").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId7 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd7 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId7,
+                                    ProductId = productToAdd7
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd7);
+                                _context.SaveChanges();
                                 break;
                             case "8":
-                                var productToAdd = _context.Products.Where(p => p.Name == "Chevrolet Corvet").Select(p => p.Id).SingleOrDefault();
+                                var productToAdd8 = _context.Products.Where(p => p.Name == "Chevrolet Corvet").Select(p => p.Id).SingleOrDefault();
+                                var LoggedInUserId8 = _context.Users.Where(u => u.Email == userEmail).Select(u => u.Id).SingleOrDefault();
+                                ShoppingCart newShoppingCartAdd8 = new ShoppingCart()
+                                {
+                                    UserId = LoggedInUserId8,
+                                    ProductId = productToAdd8
+                                };
+                                _context.ShoppingCarts.Add(newShoppingCartAdd8);
+                                _context.SaveChanges();
                                 break;
                             default:
                                 break;
-
-
                         }
 
-                        var productId = _context.Products.Where(p => p.Name == "Chevrolet Corvet").Select(p => p.Id).SingleOrDefault();
-                        var userId = _context.Users.Where(u => u.Email == "david@gmail.com").Select(u => u.Id).SingleOrDefault();
-                        ShoppingCart newShoppingCart = new ShoppingCart()
-                        {
-                            ProductId = productId,
-                            UserId = userId
-                        };
-
-                        _context.ShoppingCarts.Add(newShoppingCart);
-                        _context.SaveChanges();
                         break;
                     case "4":
                         break;
                     default:
+                        Console.WriteLine("Invalid Selection, Try Again.");
                         break;
                 }
             }

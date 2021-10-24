@@ -255,20 +255,6 @@ namespace DatabaseFirstLINQ
             _context.ShoppingCarts.Add(newShoppingCart);
             _context.SaveChanges();
 
-
-
-
-
-            var userId = _context.Users.Where(u => u.Email == "david@gmail.com").Select(u => u.Id).SingleOrDefault();
-            var productId = _context.Products.Where(p => p.Name == "Guitar").Select(p => p.Id).SingleOrDefault();
-
-            ShoppingCart newShoppingCart = new ShoppingCart()
-            {
-                UserId = userId,
-                ProductId = productId
-            };
-            _context.ShoppingCarts.Add(newShoppingCart);
-            _context.SaveChanges();
         }
 
         // <><> U Actions (Update) <><>
